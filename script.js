@@ -3,10 +3,11 @@
 // =========================
 
 // Date du premier message
-const firstMessageDate = new Date(2024, 0, 15, 21, 30);
+const firstMessageDate = new Date(2026, 4, 28, 0, 0);
 
 // Date officielle de la relation
-const relationshipDate = new Date(2024, 2, 1);
+const relationshipDate = new Date(2026, 4, 29);
+
 
 // Timeline
 const timelineEvents = [
