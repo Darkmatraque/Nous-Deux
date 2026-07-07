@@ -8,18 +8,50 @@
 </head>
 
 <body>
+  <div class="bg-glow"></div>
+
   <header>
+    <div class="logo">ND</div>
     <div class="title">Nous Deux.</div>
-    <p class="subtitle">Chaque jour avec toi est un souvenir qui s’écrit.</p>
-    <button class="enter-btn" id="enterBtn">Entrer dans notre histoire</button>
+    <p class="subtitle">Deux dates. Une histoire. Tout le reste, c’est vous.</p>
+
+    <button class="enter-btn" id="enterBtn">
+      Entrer dans notre histoire
+      <span class="enter-icon">➜</span>
+    </button>
   </header>
 
   <main id="mainContent">
 
+    <!-- Hero -->
+    <section class="hero visible">
+      <div class="hero-left">
+        <h1>Kevin & Elle</h1>
+        <p>
+          Depuis le <strong>28 mai 2026</strong>, un simple message a tout changé.<br />
+          Depuis le <strong>29 mai 2026</strong>, c’est officiel : vous deux.
+        </p>
+        <div class="hero-tags">
+          <span>Premier message 💬</span>
+          <span>Ensemble 💗</span>
+          <span>Souvenirs ✨</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-label">Jours depuis le premier message</div>
+          <div class="hero-value" id="heroDays">–</div>
+          <div class="hero-sub">Chaque jour de plus, une page de plus.</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Compteur premier message -->
     <section id="firstMessageSection">
       <h2>Notre premier message</h2>
-      <p class="section-desc">Le jour où tout a commencé.</p>
+      <p class="section-desc">
+        28 mai 2026. Un message, une conversation, et derrière, tout ce qui a suivi.
+      </p>
 
       <div class="counter-box">
         <div class="counter-item">
@@ -42,7 +74,9 @@
     <!-- Compteur relation -->
     <section id="relationshipSection">
       <h2>Depuis qu’on est ensemble</h2>
-      <p class="section-desc">Chaque jour compte.</p>
+      <p class="section-desc">
+        29 mai 2026. À partir de là, ce n’est plus “toi” et “moi”, c’est “nous”.
+      </p>
 
       <div class="counter-box">
         <div class="counter-item">
@@ -69,17 +103,22 @@
     <!-- Timeline -->
     <section id="timelineSection">
       <h2>Notre histoire</h2>
-      <p class="section-desc">Quelques dates importantes.</p>
+      <p class="section-desc">
+        Quelques dates, quelques instants. En vrai, vous savez que ça représente bien plus.
+      </p>
       <div class="timeline" id="timeline"></div>
     </section>
 
     <!-- Pourquoi je l’aime -->
     <section id="loveReasonsSection">
       <h2>Pourquoi je l’aime</h2>
+      <p class="section-desc">
+        Ce n’est pas une liste complète. C’est juste ce qui me vient en premier.
+      </p>
       <ul class="love-list" id="loveList"></ul>
 
       <div class="add-note">
-        <input type="text" id="loveInput" placeholder="Ajouter un petit mot…" />
+        <input type="text" id="loveInput" placeholder="Ajouter un nouveau petit mot…" />
         <button id="loveAddBtn">Ajouter</button>
       </div>
     </section>
@@ -87,6 +126,9 @@
     <!-- Galerie privée -->
     <section id="gallerySection">
       <h2>Galerie privée</h2>
+      <p class="section-desc">
+        Un endroit juste pour vous deux. Protégé, intime, rempli de souvenirs.
+      </p>
 
       <div class="password-box">
         <input type="password" id="galleryPassword" placeholder="Mot de passe" />
@@ -95,29 +137,35 @@
       </div>
 
       <div class="gallery-grid" id="galleryGrid" style="display:none;">
-        <div class="gallery-item">Photo de notre premier date 🌧️</div>
+        <div class="gallery-item">Premier date sous la pluie 🌧️</div>
         <div class="gallery-item">Selfie dans la voiture 🚗</div>
-        <div class="gallery-item">Un fou rire 😂</div>
-        <div class="gallery-item">Un moment parfait 💫</div>
+        <div class="gallery-item">Fou rire impossible à oublier 😂</div>
+        <div class="gallery-item">Moment où tout était simple 💫</div>
       </div>
     </section>
 
     <!-- Boîte à lettres -->
     <section id="lettersSection">
       <h2>Boîte à lettres d’amour</h2>
+      <p class="section-desc">
+        Des mots qui restent, même quand on ne les relit pas tous les jours.
+      </p>
 
       <div class="letters-list" id="lettersList"></div>
 
       <div class="add-letter">
         <input type="text" id="letterFrom" placeholder="De…" />
         <textarea id="letterText" rows="3" placeholder="Ton message…"></textarea>
-        <button id="letterAddBtn">Envoyer</button>
+        <button id="letterAddBtn">Envoyer un petit mot</button>
       </div>
     </section>
 
     <!-- Playlist -->
     <section id="playlistSection">
       <h2>Notre playlist</h2>
+      <p class="section-desc">
+        Quelques musiques qui vous ressemblent. Le reste, c’est dans vos têtes.
+      </p>
       <div class="playlist-list" id="playlistList"></div>
       <audio controls class="audio-player" id="audioPlayer"></audio>
     </section>
@@ -125,6 +173,9 @@
     <!-- Souvenir aléatoire -->
     <section id="memoriesSection">
       <h2>Souvenir du jour</h2>
+      <p class="section-desc">
+        À chaque fois que tu viens ici, un souvenir revient te dire bonjour.
+      </p>
       <div class="memory-box">
         <div class="memory-text" id="memoryText"></div>
       </div>
