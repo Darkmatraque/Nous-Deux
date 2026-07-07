@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nous Deux.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="title">Nous Deux.</div>
+    <p class="subtitle">Chaque jour avec toi est un souvenir qui s’écrit.</p>
+    <button class="enter-btn" id="enterBtn">Entrer dans notre histoire</button>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- Compteur premier message -->
+    <section id="firstMessageSection">
+      <h2>Notre premier message</h2>
+      <p class="section-desc">Le jour où tout a commencé.</p>
+
+      <div class="counter-box">
+        <div class="counter-item">
+          <div class="counter-label">Jours</div>
+          <div class="counter-value" id="fmDays">–</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-label">Heures</div>
+          <div class="counter-value" id="fmHours">–</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-label">Minutes</div>
+          <div class="counter-value" id="fmMinutes">–</div>
+        </div>
+      </div>
+
+      <p class="counter-text" id="fmText"></p>
+    </section>
+
+    <!-- Compteur relation -->
+    <section id="relationshipSection">
+      <h2>Depuis qu’on est ensemble</h2>
+      <p class="section-desc">Chaque jour compte.</p>
+
+      <div class="counter-box">
+        <div class="counter-item">
+          <div class="counter-label">Années</div>
+          <div class="counter-value" id="relYears">–</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-label">Mois</div>
+          <div class="counter-value" id="relMonths">–</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-label">Semaines</div>
+          <div class="counter-value" id="relWeeks">–</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-label">Jours</div>
+          <div class="counter-value" id="relDays">–</div>
+        </div>
+      </div>
+
+      <p class="counter-text" id="relText"></p>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timelineSection">
+      <h2>Notre histoire</h2>
+      <p class="section-desc">Quelques dates importantes.</p>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- Pourquoi je l’aime -->
+    <section id="loveReasonsSection">
+      <h2>Pourquoi je l’aime</h2>
+      <ul class="love-list" id="loveList"></ul>
+
+      <div class="add-note">
+        <input type="text" id="loveInput" placeholder="Ajouter un petit mot…" />
+        <button id="loveAddBtn">Ajouter</button>
+      </div>
+    </section>
+
+    <!-- Galerie privée -->
+    <section id="gallerySection">
+      <h2>Galerie privée</h2>
+
+      <div class="password-box">
+        <input type="password" id="galleryPassword" placeholder="Mot de passe" />
+        <button id="galleryUnlockBtn">Déverrouiller</button>
+        <span id="galleryStatus">Galerie verrouillée.</span>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid" style="display:none;">
+        <div class="gallery-item">Photo de notre premier date 🌧️</div>
+        <div class="gallery-item">Selfie dans la voiture 🚗</div>
+        <div class="gallery-item">Un fou rire 😂</div>
+        <div class="gallery-item">Un moment parfait 💫</div>
+      </div>
+    </section>
+
+    <!-- Boîte à lettres -->
+    <section id="lettersSection">
+      <h2>Boîte à lettres d’amour</h2>
+
+      <div class="letters-list" id="lettersList"></div>
+
+      <div class="add-letter">
+        <input type="text" id="letterFrom" placeholder="De…" />
+        <textarea id="letterText" rows="3" placeholder="Ton message…"></textarea>
+        <button id="letterAddBtn">Envoyer</button>
+      </div>
+    </section>
+
+    <!-- Playlist -->
+    <section id="playlistSection">
+      <h2>Notre playlist</h2>
+      <div class="playlist-list" id="playlistList"></div>
+      <audio controls class="audio-player" id="audioPlayer"></audio>
+    </section>
+
+    <!-- Souvenir aléatoire -->
+    <section id="memoriesSection">
+      <h2>Souvenir du jour</h2>
+      <div class="memory-box">
+        <div class="memory-text" id="memoryText"></div>
+      </div>
+      <button class="memory-refresh" id="memoryRefreshBtn">Un autre souvenir</button>
+    </section>
+
+    <footer>
+      Made with love by Kevin 💗 · <span id="siteYear"></span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
