@@ -1,50 +1,86 @@
 // =========================
-// CONFIG À PERSONNALISER
+// CONFIG (avec vos vraies dates)
 // =========================
 
-// Date du premier message
-const firstMessageDate = new Date(2026, 4, 28, 0, 0);
+// Premier message : 28 mai 2026
+const firstMessageDate = new Date(2026, 4, 28, 0, 0); // mois 4 = mai
 
-// Date officielle de la relation
+// Ensemble depuis : 29 mai 2026
 const relationshipDate = new Date(2026, 4, 29);
-
 
 // Timeline
 const timelineEvents = [
-  { title: "Premier message", date: "28 mai 2026", text: "Un simple message, mais un énorme changement." },
-  { title: "Premier appel", date: "28 mai 2026", text: "La première fois que ta voix a rempli ma soirée." },
-  { title: "Premier date", date: "29 mai 2026", text: "La pluie, la voiture, et pourtant, c’était parfait." },
-  { title: "Premier bisou", date: "29 mai 2026", text: "Ce moment où le temps a ralenti." }
+  {
+    title: "Premier message",
+    date: "28 mai 2026",
+    text: "Un simple message. Et pourtant, tu sais que c’était pas si simple."
+  },
+  {
+    title: "Premier vrai échange",
+    date: "Fin mai 2026",
+    text: "Les messages commencent à ressembler à quelque chose de sérieux."
+  },
+  {
+    title: "Officiellement ensemble",
+    date: "29 mai 2026",
+    text: "À partir de là, ce n’est plus toi et moi, c’est nous."
+  },
+  {
+    title: "Premier date sous la pluie",
+    date: "Un jour qui reste",
+    text: "La voiture, la pluie, et pourtant, c’était parfait."
+  }
 ];
 
 // Pourquoi je l’aime
 const loveReasonsInitial = [
-  "Son sourire qui change ma journée.",
-  "Sa façon de me comprendre.",
-  "Nos private jokes.",
-  "Sa présence qui rend tout plus simple."
+  "Son sourire qui change instantanément ma journée.",
+  "Sa façon de me comprendre sans que j’aie besoin de tout expliquer.",
+  "Nos private jokes qui n’ont aucun sens pour les autres.",
+  "Sa présence qui rend tout plus simple, même les jours compliqués.",
+  "Le fait qu’elle soit là, même quand je ne suis pas simple à suivre."
 ];
 
 // Lettres
 const lettersInitial = [
-  { from: "Kevin", text: "Merci d’être là.", date: "Aujourd’hui" },
-  { from: "Elle", text: "Tu comptes pour moi.", date: "Un jour important" }
+  {
+    from: "Kevin",
+    text: "Merci d’être là, même quand je ne suis pas parfait. Tu comptes plus que tu ne l’imagines.",
+    date: "Aujourd’hui"
+  },
+  {
+    from: "Elle",
+    text: "Tu ne réalises pas à quel point tu es important pour moi.",
+    date: "Un jour qui compte"
+  }
 ];
 
 // Playlist
 const playlist = [
-  { title: "Musique de voiture", artist: "Nous", url: "" },
-  { title: "Musique du date", artist: "Ce soir-là", url: "" },
-  { title: "Musique qui me fait penser à toi", artist: "Toujours", url: "" }
+  {
+    title: "Musique de voiture",
+    artist: "Vous deux",
+    url: "" // tu peux mettre un lien vers un mp3
+  },
+  {
+    title: "Musique du date sous la pluie",
+    artist: "Ce soir-là",
+    url: ""
+  },
+  {
+    title: "Musique qui me fait penser à toi",
+    artist: "Toujours",
+    url: ""
+  }
 ];
 
 // Souvenirs
 const memories = [
-  "Ce fou rire dans la voiture.",
-  "Ce message qui m’a fait fondre.",
-  "Ce regard silencieux.",
-  "Nos plans pour plus tard.",
-  "Ce jour où tu m’as fait sentir important."
+  "Ce fou rire dans la voiture, quand il pleuvait trop pour sortir.",
+  "Ce message où tu as écrit quelque chose de simple, mais qui m’a fait fondre.",
+  "Ce moment où on s’est regardés sans rien dire, et c’était suffisant.",
+  "La fois où on a fait des plans pour plus tard, juste pour le plaisir d’y croire.",
+  "Ce jour où tu m’as fait sentir que j’étais vraiment important pour toi."
 ];
 
 // Mot de passe galerie
@@ -57,10 +93,18 @@ const GALLERY_PASSWORD = "amour";
 const mainContent = document.getElementById("mainContent");
 const enterBtn = document.getElementById("enterBtn");
 
-enterBtn.addEventListener("click", () => {
-  document.querySelectorAll("main section").forEach((sec, i) => {
-    setTimeout(() => sec.classList.add("visible"), 200 + i * 150);
+// Affichage progressif des sections
+function showSections() {
+  const sections = document.querySelectorAll("main section");
+  sections.forEach((sec, index) => {
+    setTimeout(() => {
+      sec.classList.add("visible");
+    }, 200 + index * 150);
   });
+}
+
+enterBtn.addEventListener("click", () => {
+  showSections();
   window.scrollTo({ top: mainContent.offsetTop, behavior: "smooth" });
 });
 
@@ -68,16 +112,19 @@ enterBtn.addEventListener("click", () => {
 function updateFirstMessageCounter() {
   const now = new Date();
   const diffMs = now - firstMessageDate;
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
   const diffMinutes = Math.floor(diffMs / (1000 * 60));
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
   document.getElementById("fmDays").textContent = diffDays;
   document.getElementById("fmHours").textContent = diffHours;
   document.getElementById("fmMinutes").textContent = diffMinutes;
 
   document.getElementById("fmText").textContent =
-    `Cela fait ${diffDays} jours que nos vies ont changé.`;
+    `Cela fait ${diffDays} jours que ce premier message a tout changé.`;
+
+  const heroDaysEl = document.getElementById("heroDays");
+  if (heroDaysEl) heroDaysEl.textContent = diffDays;
 }
 
 // Compteur relation
@@ -95,12 +142,13 @@ function updateRelationshipCounter() {
   document.getElementById("relDays").textContent = diffDays;
 
   document.getElementById("relText").textContent =
-    `Depuis ${diffYears} an(s), ${diffMonths} mois et ${diffDays} jours.`;
+    `Depuis ${diffYears} an(s), ${diffMonths} mois et ${diffDays} jours, vous écrivez cette histoire ensemble.`;
 }
 
 // Timeline
 function renderTimeline() {
   const container = document.getElementById("timeline");
+  container.innerHTML = "";
   timelineEvents.forEach(ev => {
     const item = document.createElement("div");
     item.className = "timeline-item";
@@ -116,6 +164,7 @@ function renderTimeline() {
 // Pourquoi je l’aime
 function renderLoveReasons() {
   const list = document.getElementById("loveList");
+  list.innerHTML = "";
   loveReasonsInitial.forEach(reason => {
     const li = document.createElement("li");
     li.textContent = reason;
@@ -123,33 +172,38 @@ function renderLoveReasons() {
   });
 }
 
-document.getElementById("loveAddBtn").addEventListener("click", () => {
-  const text = document.getElementById("loveInput").value.trim();
+const loveInput = document.getElementById("loveInput");
+const loveAddBtn = document.getElementById("loveAddBtn");
+
+loveAddBtn.addEventListener("click", () => {
+  const text = loveInput.value.trim();
   if (!text) return;
   const li = document.createElement("li");
   li.textContent = text;
   document.getElementById("loveList").appendChild(li);
-  document.getElementById("loveInput").value = "";
+  loveInput.value = "";
 });
 
 // Galerie privée
-document.getElementById("galleryUnlockBtn").addEventListener("click", () => {
-  const pwd = document.getElementById("galleryPassword").value;
-  const grid = document.getElementById("galleryGrid");
-  const status = document.getElementById("galleryStatus");
+const galleryPasswordInput = document.getElementById("galleryPassword");
+const galleryUnlockBtn = document.getElementById("galleryUnlockBtn");
+const galleryStatus = document.getElementById("galleryStatus");
+const galleryGrid = document.getElementById("galleryGrid");
 
-  if (pwd === GALLERY_PASSWORD) {
-    grid.style.display = "grid";
-    status.textContent = "Galerie déverrouillée 💗";
+galleryUnlockBtn.addEventListener("click", () => {
+  if (galleryPasswordInput.value === GALLERY_PASSWORD) {
+    galleryGrid.style.display = "grid";
+    galleryStatus.textContent = "Galerie déverrouillée. 💗";
   } else {
-    grid.style.display = "none";
-    status.textContent = "Mot de passe incorrect.";
+    galleryGrid.style.display = "none";
+    galleryStatus.textContent = "Mot de passe incorrect.";
   }
 });
 
-// Lettres
+// Boîte à lettres
 function renderLetters() {
   const list = document.getElementById("lettersList");
+  list.innerHTML = "";
   lettersInitial.forEach(letter => {
     const div = document.createElement("div");
     div.className = "letter";
@@ -161,25 +215,29 @@ function renderLetters() {
   });
 }
 
-document.getElementById("letterAddBtn").addEventListener("click", () => {
-  const from = document.getElementById("letterFrom").value || "Anonyme";
-  const text = document.getElementById("letterText").value.trim();
-  if (!text) return;
+const letterFromInput = document.getElementById("letterFrom");
+const letterTextInput = document.getElementById("letterText");
+const letterAddBtn = document.getElementById("letterAddBtn");
 
+letterAddBtn.addEventListener("click", () => {
+  const from = letterFromInput.value.trim() || "Anonyme";
+  const text = letterTextInput.value.trim();
+  if (!text) return;
   const div = document.createElement("div");
   div.className = "letter";
+  const dateStr = new Date().toLocaleDateString("fr-FR");
   div.innerHTML = `
-    <div class="letter-meta">${from} · ${new Date().toLocaleDateString("fr-FR")}</div>
+    <div class="letter-meta">${from} · ${dateStr}</div>
     <div>${text}</div>
   `;
-
   document.getElementById("lettersList").prepend(div);
-  document.getElementById("letterText").value = "";
+  letterTextInput.value = "";
 });
 
 // Playlist
 function renderPlaylist() {
   const list = document.getElementById("playlistList");
+  list.innerHTML = "";
   playlist.forEach((track, index) => {
     const div = document.createElement("div");
     div.className = "track";
@@ -190,17 +248,16 @@ function renderPlaylist() {
     list.appendChild(div);
   });
 
-  document.querySelectorAll(".track button").forEach(btn => {
+  list.querySelectorAll("button").forEach(btn => {
     btn.addEventListener("click", () => {
-      const idx = btn.getAttribute("data-index");
-      const audio = document.getElementById("audioPlayer");
+      const idx = parseInt(btn.getAttribute("data-index"), 10);
       const track = playlist[idx];
-
+      const audio = document.getElementById("audioPlayer");
       if (track.url) {
         audio.src = track.url;
         audio.play();
       } else {
-        alert("Ajoute une URL audio dans le code 😉");
+        alert("Tu peux ajouter une URL audio pour cette musique dans le code 😉");
       }
     });
   });
@@ -212,7 +269,8 @@ function showRandomMemory() {
   document.getElementById("memoryText").textContent = memories[idx];
 }
 
-document.getElementById("memoryRefreshBtn").addEventListener("click", showRandomMemory);
+const memoryRefreshBtn = document.getElementById("memoryRefreshBtn");
+memoryRefreshBtn.addEventListener("click", showRandomMemory);
 
 // Footer année
 document.getElementById("siteYear").textContent = new Date().getFullYear();
@@ -226,6 +284,7 @@ renderLetters();
 renderPlaylist();
 showRandomMemory();
 
+// Met à jour les compteurs toutes les minutes
 setInterval(() => {
   updateFirstMessageCounter();
   updateRelationshipCounter();
