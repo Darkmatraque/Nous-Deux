@@ -1,0 +1,133 @@
+:root {
+  --bg-main: #fff7f3;
+  --bg-soft: #f7e9e3;
+  --accent: #fadadd;
+  --accent-deep: #d9a7b0;
+  --text-main: #3b2b2f;
+  --text-soft: #7a5b63;
+  --border-soft: #e3cfd4;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #fadadd, #fff7f3 40%);
+  color: var(--text-main);
+  margin: 0;
+  padding-bottom: 80px;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-family: "Playfair Display", serif;
+  color: var(--accent-deep);
+  position: relative;
+}
+
+.title::after {
+  content: "💗";
+  position: absolute;
+  right: -40px;
+  top: -10px;
+  animation: heartbeat 1.6s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25); }
+  60% { transform: scale(1); }
+}
+
+.enter-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #fadadd, #f7e9e3);
+  cursor: pointer;
+}
+
+main section {
+  background: #fff7f3;
+  border-radius: 24px;
+  padding: 24px;
+  margin: 18px 0;
+  border: 1px solid var(--border-soft);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
+
+main section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counter-box {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.counter-item {
+  flex: 1 1 150px;
+  background: var(--bg-soft);
+  padding: 14px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.timeline {
+  padding-left: 20px;
+  border-left: 2px solid var(--accent);
+}
+
+.timeline-item {
+  margin-bottom: 12px;
+}
+
+.love-list li {
+  background: var(--bg-soft);
+  padding: 10px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.gallery-item {
+  background: var(--bg-soft);
+  padding: 10px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.letters-list .letter {
+  background: var(--bg-soft);
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+
+.track {
+  background: var(--bg-soft);
+  padding: 10px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.memory-box {
+  background: var(--bg-soft);
+  padding: 14px;
+  border-radius: 18px;
+}
