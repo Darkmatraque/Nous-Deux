@@ -10,10 +10,10 @@ const relationshipDate = new Date(2024, 2, 1);
 
 // Timeline
 const timelineEvents = [
-  { title: "Premier message", date: "15 janvier 2024", text: "Un simple message, mais un énorme changement." },
-  { title: "Premier appel", date: "22 janvier 2024", text: "La première fois que ta voix a rempli ma soirée." },
-  { title: "Premier date", date: "5 février 2024", text: "La pluie, la voiture, et pourtant, c’était parfait." },
-  { title: "Premier bisou", date: "20 février 2024", text: "Ce moment où le temps a ralenti." }
+  { title: "Premier message", date: "28 mai 2026", text: "Un simple message, mais un énorme changement." },
+  { title: "Premier appel", date: "28 mai 2026", text: "La première fois que ta voix a rempli ma soirée." },
+  { title: "Premier date", date: "29 mai 2026", text: "La pluie, la voiture, et pourtant, c’était parfait." },
+  { title: "Premier bisou", date: "29 mai 2026", text: "Ce moment où le temps a ralenti." }
 ];
 
 // Pourquoi je l’aime
